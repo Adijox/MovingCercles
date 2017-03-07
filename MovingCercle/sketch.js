@@ -13,16 +13,15 @@ var done = 0;
 var vect;
 var UNO = 0;
 var score = 0;
-//var music;
-var r = 30;
-var realr;
+var music;
+
 function setup () {
     //music = loadSong('MovingCircles.mp3');
   // song.play();
    x = 50;
     y = 50;
     speed = 5;
-    createCanvas(1600, 794);
+    createCanvas(1600, 790);
     rmx = 50;
     rmy = 80;
     
@@ -47,8 +46,8 @@ function draw() {
     }
     fill(124, 217, 156);
     noStroke();
-    ellipse(x, y, score*2+r, score*2+r);
-    realr = score*2 + r;
+    ellipse(x, y, score*2+30, score*2+30);
+    
     if(done == 0) {
        Obstacle();
         console.log("crée");
@@ -66,7 +65,7 @@ function draw() {
         magn = 200;
         UNO = 1;
     }
-    if (magn < realr + 10) {
+    if (magn <= 40) {
         Obstacle();
         console.log("Colision");
         score+=1;
@@ -82,6 +81,7 @@ function draw() {
     while(done === 1) {
                 obstacle = new Obstacle(rmx, rmy, rmone,rmt, rmt);
         console.log("step2");
+
     }*/
      if (keyIsDown(ENTER)) {
     stroke(0, 60, 255);
@@ -92,10 +92,9 @@ function draw() {
         gameOver = 1;
     }
     if (gameOver === 1) {
-        createCanvas(2000, 200);
+        createCanvas(200, 200);
     }
-    console.log(magn);
-    console.log(realr);
+    
 }
 
 function Obstacle () {
@@ -107,3 +106,5 @@ function Obstacle () {
 
 
   }
+
+
