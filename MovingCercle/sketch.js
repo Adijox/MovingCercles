@@ -92,7 +92,7 @@ function draw() {
         gameOver = 1;
     }
     if (gameOver === 1) {
-        createCanvas(200, 200);
+        createCanvas(2000, 200);
     }
     console.log(magn);
     console.log(realr);
