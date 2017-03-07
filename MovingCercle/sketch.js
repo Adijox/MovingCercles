@@ -13,15 +13,15 @@ var done = 0;
 var vect;
 var UNO = 0;
 var score = 0;
-var music;
-
+//var music;
+var r = 30;
 function setup () {
     //music = loadSong('MovingCircles.mp3');
   // song.play();
    x = 50;
     y = 50;
     speed = 5;
-    createCanvas(1600, 790);
+    createCanvas(width, height);
     rmx = 50;
     rmy = 80;
     
@@ -46,7 +46,7 @@ function draw() {
     }
     fill(124, 217, 156);
     noStroke();
-    ellipse(x, y, score*2+30, score*2+30);
+    ellipse(x, y, score*2+r, score*2+r);
     
     if(done == 0) {
        Obstacle();
@@ -65,7 +65,7 @@ function draw() {
         magn = 200;
         UNO = 1;
     }
-    if (magn <= 40) {
+    if (magn <= r + 30) {
         Obstacle();
         console.log("Colision");
         score+=1;
